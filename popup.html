@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+<meta charset="utf-8" />
+<title>起点小说阅读器</title>
+<link rel="stylesheet" href="css/popup.css" type="text/css">
+</head>
+<body>
+<section id="menu" class="menu hide">
+<!--
+
+-->	
+	<div class="item enable hide" title="开始使用起点小说阅读器的所用功能.">
+ 		<div class="pad"></div>
+ 		<span>启用阅读器</span>
+ 	</div>
+	<div class="item disable" title="下次载入页面时停止使用起点小说阅读器的所用功能.">
+ 		<div class="pad"></div>
+ 		<span>停用阅读器</span>
+ 	</div>
+ 	<div id="options">
+	<hr />
+	<div class="item loadall checkbox" title="立刻载入并显示全部未载入章节.">
+ 		<div class="pad"></div>
+ 		<span>载入全部章节</span>
+ 	</div>
+	<div class="item scroll" title="">
+ 		<div class="pad"></div>
+ 		<span>自动滚屏</span>
+ 	</div>
+	<div class="item auto_mark checkbox" title="自动为正在阅读的章节设置书签">
+		<div class="pad"></div>
+		<span>自动书签</span>
+	</div>
+	<hr />
+	
+
+	<div class="item mark" title="手动更新书签为正在阅读的章节">
+ 		<div class="pad"></div>
+		<span>设置书签</span>
+	</div>
+	<hr />
+<!--
+	<div class="item favo" title="将这本小说加入收藏夹">
+ 		<div class="pad"></div>
+		<span>收藏</span>
+	</div>
+	<div class="item vote" title="对这本小说投推荐票">
+ 		<div class="pad"></div>
+		<span>推荐</span>
+	</div>
+	<hr />
+-->
+	<div class="item color" title="设置背景颜色与文字颜色">
+ 		<div class="pad"></div>
+		<span>颜色设置</span>
+	</div>
+	
+	<div class="item font" title="设置正文的字体与字号">
+ 		<div class="pad"></div>
+		<span>字体设置</span>
+	</div>
+	
+	<div class="item layout" title="设置页边距与行间距">
+ 		<div class="pad"></div>
+		<span>布局设置</span>
+	</div>
+	</div>
+</section>
+<section id="scroll" class="scroll hide">
+	<header>滚屏设置</header>
+	<hr />
+	<div class="item scroll_start" title="">
+ 		<div class="pad"></div>
+ 		<span>开始滚屏</span>
+ 	</div>
+	<div class="item scroll_stop" title="">
+ 		<div class="pad"></div>
+ 		<span>停止滚屏</span>
+ 	</div>
+	<div class="item scroll_speed" title="滚屏速度">
+		<div class="pad"></div>
+		<span><label>
+			速度: 
+			快<input type="range">慢
+		</label></span>
+	</div>
+	<hr />
+	
+	<footer><div class="pad"></div>返回</footer>
+</section>
+<section id="color" class="color hide">
+	<header>颜色设置</header>
+	<hr />
+	
+	<div class="item text_color" title="请输入16进制颜色码(FFCC88)">
+		<div class="pad"></div>
+		<span><label>
+			文字颜色:
+			<input type="text" placeholder="请输入16进制颜色" />
+			<div class="color_example"></div>
+			<div class="picker"></div>
+		</label></span>
+	</div>
+	<div class="item bg_color">
+		<div class="pad"></div>
+		<span><label>
+			背景颜色:
+			<input type="text" placeholder="请输入16进制颜色" />
+			<div class="color_example"></div>
+			<div class="picker"></div>
+		</label></span>
+	</div>
+	<hr />
+	
+	<footer><div class="pad"></div>返回</footer>
+</section>
+<section id="font" class="font hide">
+	<header>字体设置</header>
+	<hr />
+	
+	<div class="item font" title="请输入字体全名">
+		<div class="pad"></div>
+		<span><label>
+			字体:
+			<input type="text" default="微软雅黑" placeholder="请输入字体全名">
+		</label></span>
+	</div>
+	<div class="item size" title="正文字体大小">
+		<div class="pad"></div>
+		<span><label>
+			字号:
+			<input type="range"> <div id="size_num"></div>px
+		</label></span>
+		<div class="separator"></div>
+	</div>
+	<hr />
+	
+	<footer><div class="pad"></div>返回</footer>
+	
+</section>
+<section id="layout" class="layout hide">
+	<header>布局设置</header>
+	<hr />
+	
+	<div class="item spacing" title="正文部分行间距">
+		<div class="pad"></div>
+		<span><label>
+			行间距:
+			<input type="range"><div id="spacing_num"></div>%
+		</label></span>
+	</div>
+	<div class="item margin">
+		<div class="pad"></div>
+		<span><label>
+			页边距:
+			<input type="range"><div id="margin_num"></div>px
+		</label></span>
+	</div>
+	<hr />
+	
+	<footer><div class="pad"></div>返回</footer>
+</section>
+<script src="js/jquery.js"></script>
+<script src="js/color.js"></script>
+<script src="js/ColorPicker.js"></script>
+<script src="js/popup.js"></script>
+</html>

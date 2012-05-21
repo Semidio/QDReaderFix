@@ -1,0 +1,34 @@
+{
+	'qidian' : {
+		'file' : 'qidian',
+		'url' :  [/^http:\/\/www\.qidian\.com\/BookReader\/\d+,\d+\.aspx/i]
+	},
+	'qdmm' : {
+		'file' : 'qdmm',
+		'url' :  [/^http:\/\/www\.qdmm\.com\/BookReader\/\d+,\d+\.aspx/i]
+	},
+	'qdwenxue' : {
+		'file' : 'qdwenxue',
+		'url' :  [/^http:\/\/www\.qdwenxue\.com\/BookReader\/\d+,\d+\.aspx/i]
+	},
+		'vip_qdmm' : {
+		'file' : 'vip_qdmm',
+		'url' :  [/^http:\/\/vipreader\.qdmm\.com\/BookReader\/vip,\d+,\d+(,\d+)?\.aspx/i]
+	},
+	'vip_qdwenxue' : {
+		'file' : 'vip_qdwenxue',
+		'url' :  [/^http:\/\/vipreader\.qdwenxue\.com\/BookReader\/vip,\d+,\d+(,\d+)?\.aspx/i]
+	},
+	'vip_qidian' : {
+		'file' : 'vip_qidian',
+		'url' :  [/^http:\/\/vipreader\.qidian\.com\/BookReader\/vip,\d+,\d+(,\d+)?\.aspx/i]
+	},
+	'big_vip_qidian' : {
+		'file' : 'big5_vip_qidian',
+		'url' :  [/^http:\/\/big5\.qidian\.com\/BookReader\/vip,\d+,\d+(,\d+)?\.aspx/i]
+	},
+	'big5_qidian' : {
+		'file' : 'big5_qidian',
+		'url' :  [/^http:\/\/big5\.qidian\.com\/BookReader\/\d+,\d+\.aspx/i]
+	}
+}

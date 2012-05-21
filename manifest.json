@@ -1,0 +1,21 @@
+{
+   "background_page": "background.html",
+   "content_scripts": [ {
+      "js": [ "js/jquery.js", "js/reader.js" ],
+      "matches": [ "http://www.qidian.com/BookReader/*,*.aspx", "http://www.qidian.com/bookReader/*,*.aspx", "http://www.qidian.com/bookreader/*,*.aspx", "http://vipreader.qidian.com/BookReader/vip,*,*.aspx", "http://vipreader.qidian.com/bookReader/vip,*,*.aspx", "http://vipreader.qidian.com/bookreader/vip,*,*.aspx", "http://big5.qidian.com/BookReader/*,*.aspx", "http://big5.qidian.com/bookReader/*,*.aspx", "http://big5.qidian.com/bookreader/*,*.aspx" ,"http://www.qdmm.com/BookReader/*,*.aspx", "http://www.qdmm.com/bookReader/*,*.aspx", "http://www.qdmm.com/bookreader/*,*.aspx", "http://vipreader.qdmm.com/BookReader/vip,*,*.aspx", "http://vipreader.qdmm.com/bookReader/vip,*,*.aspx", "http://vipreader.qdmm.com/bookreader/vip,*,*.aspx" ,"http://www.qdwenxue.com/BookReader/*,*.aspx", "http://www.qdwenxue.com/bookReader/*,*.aspx", "http://www.qdwenxue.com/bookreader/*,*.aspx", "http://vipreader.qdwenxue.com/BookReader/vip,*,*.aspx", "http://vipreader.qdwenxue.com/bookReader/vip,*,*.aspx", "http://vipreader.qdwenxue.com/bookreader/vip,*,*.aspx"],
+      "run_at": "document_end"
+   } ],
+   "description": "提供起点公众章节和vip章节的自动预载,自动书签与显示优化(支持简体，繁体，女生，文学站).",
+   "icons": {
+      "48": "img/logo48.png",
+      "128": "img/logo128.png"
+   },
+   "name": "起点小说阅读器 修复版",
+   "page_action": {
+      "default_icon": "img/rock.png",
+      "default_popup": "popup.html",
+      "default_title": "\u8D77\u70B9\u5C0F\u8BF4\u9605\u8BFB\u5668"
+   },
+   "permissions": [ "http://*.qidian.com/", "http://*.qdmm.com/" , "http://*.qdwenxue.com", "tabs" ],
+   "version": "0.1.3.4"
+}

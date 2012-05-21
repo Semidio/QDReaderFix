@@ -1,0 +1,80 @@
+{
+
+	'charset' : 'GB18030',
+	// 解析url规则
+	'urlParser' : {
+		'bookId' : /\/BookReader\/vip,(\d+),/im,
+		'chapterId' : /\/BookReader\/vip,\d+,(\d+)/im,
+		'pageId' : /\/BookReader\/vip,\d+,\d+,(\d+)/im,
+
+		'__end' : null
+	},
+	// 解析页面规则
+ 
+	'pageParser' : {
+		'bookName' : /<title>\s*(.+?)\/(起点小说阅读|起點小說閱讀)\s*<\/title>/im,
+		'chapterName' : /chapterName\s*:\s*['"](.+?)['"]\s*/im,
+		'authorName' : /var authorName\s*=\s*['"](.+?)['"]\s*/im,
+		'authorId' : /var authorId\s*=\s*['"](.+?)['"]\s*/im,
+		'nextId' : /nextpage='(vip,[\d,]+)\.aspx'/im,
+		'prevId' : /prevpage='(vip,[\d,]+)\.aspx'/im,
+		'first' : /prevpage='http:\/\/www\.qdmm\.com\/BookReader\//im,
+		'last' : /nextpage='http:\/\/www\.qdmm\.com\/BookReader\/LastPage\.aspx/im,
+		'__end' : null
+	},
+	'maskImageGet' : {
+		// url来源
+		'res' : 'page',
+		// url匹配规则
+		'reg' : /<img id=['"]Image1['"].+?src=['"](.+?)['"]/im,
+		'escape' : true,
+		'__end' : null
+	},
+	
+	// 解析的附加规则()
+	'parserFixRender' : {
+		'bookUrl' : 'http://www.qdwenxue.com/Book/${bookId}$.aspx',
+		'listUrl' : 'http://www.qdwenxue.com/BookReader/${bookId}$.aspx',
+		'chapterUrl' : 'http://vipreader.qdwenxue.com/BookReader/vip,${bookId}$,${chapterId}$.aspx',
+		'prevUrl' : 'http://vipreader.qdwenxue.com/BookReader/${prevId}$.aspx',
+		'nextUrl' : 'http://vipreader.qdwenxue.com/BookReader/${nextId}$.aspx',
+		
+
+		'__end' : null
+	},
+	'bookmark': {
+		'url' : 'http://vipreader.qdwenxue.com/Ajax.aspx?opName=AddBookMark',
+		'header':[
+			['Cache-Control', 'max-age=0'],
+			['CMFUAJAX-Ver', 'ver1.0'],
+			['Content-Type', 'application/x-www-form-urlencoded;']
+		],
+		'data' : function(chap) {
+			return 'bookId=' + chap.bookId + '&chapterId=' + chap.chapterId;
+		}
+	},
+	// 页面清理
+	'clean' : function () {
+		var blank = function(){return true;};
+		var blank1 = function(){return false;};
+		document.onkeyup=blank;
+		document.onkeydown=blank;
+		document.onkeypress=blank;
+		document.onmouseup=blank;
+		document.onmousemove=blank;
+		document.onmousedown=blank;
+		document.onclick=blank;
+		document.onscroll=blank;
+		document.onresize=blank;
+		document.onload=blank;
+		document.body.onclick=blank;
+		document.oncontextmenu=blank;
+		document.body.onselectstart='return false;';
+		document.onselectstart=blank1;
+		$(document.body).unbind().html('');
+	},
+	// 剩余多少屏时触发显示下一页逻辑
+	'drawTriggerHeight' : 2,
+
+	'__end' : null
+}

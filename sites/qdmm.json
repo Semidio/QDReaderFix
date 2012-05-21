@@ -1,0 +1,107 @@
+{
+
+	'charset' : 'GB18030',
+	// 解析url规则
+	'urlParser' : {
+		'bookId' : /\/BookReader\/(\d+),/im,
+		'chapterId' : /\/BookReader\/\d+,(\d+)/im,
+
+		'__end' : null
+	},
+	// 解析页面规则
+	'pageParser' : {
+		'bookName' : /bookName\s*:\s*['"](.+?)['"]\s*/im,
+		'chapterName' : /chapterName\s*:\s*['"](.+?)['"]\s*/im,
+		'authorName' : /authorName\s*:\s*['"](.+?)['"]\s*/im,
+		'authorId' : /authorId\s*:\s*['"](.+?)['"]\s*/im,
+		'nextId' : /<a id="HeadNextLink" href="\/BookReader\/\d+,(\d+)\.aspx">.+\/a>/im,
+		'prevId' : /<a id="HeadPrevLink" href="\/BookReader\/\d+,(\d+)\.aspx">.+\/a>/im,
+		'first' : /<a id="HeadPrevLink">.+\/a>/im,
+		'last' : /<a id="HeadNextLink" href="\/BookReader\/LastPage\.aspx\?bookId.+?">.+\/a>/im,
+		'nextVip' : /<a id="HeadNextLink" href="vip,\d+,(\d+)\.aspx">.+\/a>/im,
+		'content' : function(page) {
+			var mark = '<div class="bookcontent" id="content">';
+			var start = page.indexOf(mark);
+			
+			if (start <= 0) {
+				return null;
+			} 
+			var end = page.indexOf('<br', start);
+			if (end <= 0) {
+				return null;
+			} 			
+			var txt = page.substring(start + mark.length, end);
+			txt = txt.replace(/<a.*?<\/a>/ig, '');
+			txt = txt.replace(/[　 ]{2,}/ig, '');
+			txt = txt.replace(/(<p>|<br \/>)/ig, '\n');
+			txt = txt.replace(/[\s;]*$/g, '');
+			txt = $.trim(txt);
+			return txt;
+		},
+
+		'__end' : null
+		
+		
+	},
+	// 解析二次http请求规则
+	'httpGet' : {
+		// url来源
+		'res' : 'page',
+		// url匹配规则
+		'reg' : /<script.+?src=['"]([^'"]+?\.txt)['"]/im,
+		// 解析规则
+		'pageParser' : {
+			'content' : function(content) {
+				txt = content.replace(/^document\.write\(/im, '').replace(/\);$/im, '');
+				txt = eval(txt);
+				txt = txt.replace(/<a .+?<\/a>/ig, '');
+				txt = txt.replace(/[　 ]{2,}/ig, '');
+				txt = txt.replace(/<p>/ig, '\n');
+				txt = $.trim(txt);
+				return txt;
+			}
+		}
+	},
+	// 解析的附件规则()
+	'parserFixRender' : {
+		'bookUrl' : 'http://www.qdmm.com/Book/${bookId}$.aspx',
+		'listUrl' : 'http://www.qdmm.com/BookReader/${bookId}$.aspx',
+		'chapterUrl' : 'http://www.qdmm.com/BookReader/${bookId}$,${chapterId}$.aspx',
+		'prevUrl' : 'http://www.qdmm.com/BookReader/${bookId}$,${prevId}$.aspx',
+		'nextUrl' : 'http://www.qdmm.com/BookReader/${bookId}$,${nextId}$.aspx',
+
+		'__end' : null
+	},
+	
+	'bookmark': {
+		'url' : 'http://www.qdmm.com/ajax.aspx?opName=AddBookMark',
+		'header':[
+			['Cache-Control', 'max-age=0'],
+			['CMFUAJAX-Ver', 'ver1.0'],
+			['Content-Type', 'application/x-www-form-urlencoded;']
+		],
+		'data' : function(chap) {
+			return 'bookId=' + chap.bookId + '&chapterId=' + chap.chapterId;
+		}
+	},
+	// 页面清理
+	'clean' : function () {
+		var blank = function(){return true;};
+		document.onkeyup=blank;
+		document.onkeydown=blank;
+		document.onkeypress=blank;
+		document.onmouseup=blank;
+		document.onmousemove=blank;
+		document.onmousedown=blank;
+		document.onclick=blank;
+		document.body.onclick=blank;
+		document.oncontextmenu=blank;
+		document.body.onselectstart=blank;
+		document.onselectstart=blank;
+		$(document.body).unbind().html('');
+	},
+	// 剩余多少屏内容时触发显示下一页逻辑
+	'drawTriggerHeight' : 2,
+
+	'__end' : null
+}

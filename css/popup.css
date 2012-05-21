@@ -1,0 +1,228 @@
+body {
+	margin: 0px;
+	color: #345;
+	-webkit-user-select: none;
+#	visibility: hidden;
+}
+body, td, th, section, header, input, select, textarea, button, a {
+	font: menu;
+	font-size: 9pt;
+}
+input {
+	vertical-align: middle;
+}
+body * {
+	white-space: nowrap;
+	?outline: solid 1px #abc;
+}
+hr {
+	height: 0px;
+	margin: 0px 0px;
+	border: none;
+	border-top: solid 1px #eef;
+}
+
+.ltr, .ltr * {
+	direction: ltr !important;
+	text-align: left !important;
+}
+
+section {
+	margin: 2px 0px;
+}
+
+section .item .pad {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+
+section .checkbox .pad {
+	?background: url("../img/ok.png");
+}
+section .checked .pad {
+	background: url("../img/ok.png") !important;
+}
+section .enable .pad {
+	background: url("../img/rock.png");
+}
+section .disable .pad {
+	background: url("../img/disable.png");
+}
+section .favo .pad {
+	background: url("../img/favo.png");
+}
+section .loadall .pad {
+	background: url("../img/rock_ok.png");
+}
+section .scroll .pad {
+	background: url("../img/scroll.png");
+}
+section .scroll_start .pad {
+	background: url("../img/start.png");
+}
+section .scroll_stop .pad {
+	background: url("../img/stop.png");
+}
+section .scroll_speed .pad {
+	background: url("../img/speed.png");
+}
+section .mark .pad {
+	background: url("../img/mark.png");
+}
+section .vote .pad {
+	background: url("../img/vote.png");
+}
+section .color .pad {
+	background: url("../img/color.png");
+}
+section .font .pad {
+	background: url("../img/font.png");
+}
+section .layout .pad {
+	background: url("../img/layout.png");
+}
+section .size .pad {
+	background: url("../img/size.png");
+}
+section .text_color .pad {
+	background: url("../img/text-color.png");
+}
+section .bg_color .pad {
+	background: url("../img/bg-color.png");
+}
+section .spacing .pad {
+	background: url("../img/line.png");
+}
+section .margin .pad {
+	background: url("../img/margin.png");
+}
+
+section .item span {
+	-webkit-padding-start: 4px;
+}
+
+section .item {
+	?padding: 4px 20px 4px 6px;
+	padding: 4px 20px;
+	-webkit-padding-start: 6px;
+	margin: 0px 2px;
+	white-space: nowrap;
+	cursor: pointer;
+	?text-shadow: #ccc -1px 0px 2px;	
+}
+
+section .item:hover {
+	?padding: 3px 19px 3px 5px;
+	padding: 3px 19px;
+	-webkit-padding-start: 5px;
+	border: solid 1px #bcd;
+	border-radius: 3px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0f5fc), color-stop(1, #e0e9f4));
+	background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, #fff),  color-stop(0.4, hsl(215, 67%, 97%)), color-stop(0.41, hsl(213, 48%, 95%)));
+
+	?border: solid 1px #c5cdd3;
+	?background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f5f9fe), color-stop(1, #e8f1f9));
+}
+
+section .item:active {
+	?padding: 3px 19px 3px 5px;
+	padding: 3px 19px;
+	-webkit-padding-start: 5px;
+	border: solid 1px #abc;
+	border-radius: 3px;
+	background: #dde7f2 none;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8eef4), color-stop(1, #f5f9f4));
+}
+
+section .blue {
+	color: #47b;
+}
+
+section .green {
+	color: #5b5;
+}
+
+section .red {
+	color: #d63;
+}
+
+section .yellow {
+	color: #ca0;
+}
+
+section .purple {
+	color: #a407be;
+}
+
+hr {
+	height: 0px;
+	margin: 3px 2px;
+	border: 0;
+	border-top: 1px solid #ddd;
+}
+
+.font input {
+	width:100px;
+}
+.color input {
+	width:60px;
+}
+.layout input {
+	width:100px;
+}
+.scroll input {
+	width:80px;
+}
+header {
+	font-size:11pt;
+	text-align:center;
+	margin:5px;
+	cursor: none;
+}
+footer{
+	margin:5px;
+	text-align:center;
+	font-size:10pt;
+	cursor: pointer;
+	vertical-align: middle;
+}
+footer .pad{
+	display: inline-block;
+	margin-right:4px;
+	background: url("../img/back.png");
+	width:16px;
+	height:16px;
+}
+.hide {
+	display:none;
+}
+.show {
+	display:block;
+}
+div#size_num, div#spacing_num, div#margin_num {
+	display: inline-block;
+	size:9pt;
+	color:#f33;
+}
+.bg_color{
+	verc
+}
+.picker {
+	display:block;
+}
+.picker canvas{
+	border:1px solid black;
+}
+
+.color_example{
+	width:40px;
+	height:18px;
+	display:inline-block;
+	margin:0 0 2px 0;
+	padding:0;
+	vertical-align:bottom;
+	border: 1px solid black;
+}
