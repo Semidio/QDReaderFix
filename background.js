@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh_CN">
-  <head>
-	<meta charset="utf-8" />
-	<script src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/base64.js"></script>
-	<script type="text/javascript" src="js/color.js"></script>
-	<script type="text/javascript" src="js/MaskImage.js"></script>
-    <script>
+//background.js
 var ResourceCache = {};
 var Config = function (onloadCallback) {
 	// 错误处理
@@ -269,6 +261,3 @@ var conf = new Config(function(){
 	// 挂入request钩子
 	chrome.extension.onRequest.addListener(onRequest);
 });
-    </script>
-  </head>
-</html>

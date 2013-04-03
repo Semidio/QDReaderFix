@@ -3,6 +3,10 @@
 		'file' : 'qidian',
 		'url' :  [/^http:\/\/www\.qidian\.com\/BookReader\/\d+,\d+\.aspx/i]
 	},
+	'qidian-read' : {
+		'file' : 'qidian',
+		'url' :  [/^http:\/\/read\.qidian\.com\/BookReader\/\d+,\d+\.aspx/i]
+	},
 	'qdmm' : {
 		'file' : 'qdmm',
 		'url' :  [/^http:\/\/www\.qdmm\.com\/BookReader\/\d+,\d+\.aspx/i]

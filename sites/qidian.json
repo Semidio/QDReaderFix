@@ -18,7 +18,7 @@
 		'prevId' : /<a id="HeadPrevLink" href="\/BookReader\/\d+,(\d+)\.aspx">.+\/a>/im,
 		'first' : /<a id="HeadPrevLink">.+\/a>/im,
 		'last' : /<a id="HeadNextLink" href="\/BookReader\/LastPage\.aspx\?bookId.+?">.+\/a>/im,
-		'nextVip' : /<a id="HeadNextLink" href="vip,\d+,(\d+)\.aspx">.+\/a>/im,
+		'nextVip' : /<a id="HeadNextLink" href="http\:\/\/vipreader.qidian.com\/BookReader\/vip,\d+,(\d+)\.aspx">.+\/a>/im,
 		'content' : function(page) {
 			var mark = '<div class="bookcontent" id="content">';
 			var start = page.indexOf(mark);

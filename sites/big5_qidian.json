@@ -19,7 +19,7 @@
 		'last' : /<a id="HeadNextLink" href="\/BookReader\/LastPage\.aspx\?bookId.+?">下一章<\/a>/im,
 		'nextVip' : /<a id="HeadNextLink" href="vip,\d+,(\d+)\.aspx">下一章<\/a>/im,
 		'content' : function(page) {
-			var mark = '<div class="bookcontent" id="content" style="margin-top:30px;" >';
+			var mark = '<div class="bookcontent" id="content">'';
 			var start = page.indexOf(mark);
 			
 			if (start <= 0) {
