@@ -3,7 +3,7 @@
     "scripts": [ "js/jquery.js", "js/base64.js", "js/color.js", "js/MaskImage.js", "background.js" ]
   },
    "content_scripts": [ {
-      "js": [ "js/jquery.js", "js/reader.js" ],
+      "js": [ "js/jquery.js", "js/utf8.js", "js/iconv.js", "js/reader.js" ],
       "matches": ["http://www.qidian.com/BookReader/*,*.aspx", "http://www.qidian.com/bookReader/*,*.aspx", "http://www.qidian.com/bookreader/*,*.aspx",  "http://read.qidian.com/BookReader/*,*.aspx", "http://read.qidian.com/bookReader/*,*.aspx", "http://read.qidian.com/bookreader/*,*.aspx", "http://vipreader.qidian.com/BookReader/vip,*,*.aspx", "http://vipreader.qidian.com/bookReader/vip,*,*.aspx", "http://vipreader.qidian.com/bookreader/vip,*,*.aspx", "http://big5.qidian.com/BookReader/*,*.aspx", "http://big5.qidian.com/bookReader/*,*.aspx", "http://big5.qidian.com/bookreader/*,*.aspx" ,"http://www.qdmm.com/BookReader/*,*.aspx", "http://www.qdmm.com/bookReader/*,*.aspx", "http://www.qdmm.com/bookreader/*,*.aspx", "http://vipreader.qdmm.com/BookReader/vip,*,*.aspx", "http://vipreader.qdmm.com/bookReader/vip,*,*.aspx", "http://vipreader.qdmm.com/bookreader/vip,*,*.aspx" ,"http://www.qdwenxue.com/BookReader/*,*.aspx", "http://www.qdwenxue.com/bookReader/*,*.aspx", "http://www.qdwenxue.com/bookreader/*,*.aspx", "http://vipreader.qdwenxue.com/BookReader/vip,*,*.aspx", "http://vipreader.qdwenxue.com/bookReader/vip,*,*.aspx", "http://vipreader.qdwenxue.com/bookreader/vip,*,*.aspx"],
       "run_at": "document_end"
    } ],
