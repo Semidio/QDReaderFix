@@ -188,6 +188,11 @@ var Helper = {
 						var match = str.match(rule);
 						if (match) {
 							obj[key] = match.length > 1 ? match[1] : true;
+							if (key == "chapterName"){
+                 						var chap_name = utf8.stringToUTF8Bytes(match[1]);
+                  						var converted = iconv.convert(chap_name, 'UTF-8', 'GB18030');
+                  						obj[key] = utf8.UTF8BytesToString(converted);
+              						}
 						}
 					}
 				}
